@@ -1,3 +1,5 @@
+//TODO find a way to tie library elements to DOM elements.
+
 let myLibrary = [];
 
 function Book(title, author, pageCount, status) {
@@ -11,5 +13,6 @@ function Book(title, author, pageCount, status) {
 }
 
 function addBookToLibrary() {
-    
+    const book = new Book("Legend", "Marie Lu", "300", "read")
+    myLibrary.push(book)
 }
