@@ -8,8 +8,31 @@
     <link rel="stylesheet" href="styles.css">
     <script src="./book-app.js" defer></script>
 </head>
-<body>
-    <div></div>
+<body id="body">
+    <div id="form-pop">
+        <form action="">
+            <div class="form-title">Book Info</div>
+            <ul>
+                <li>
+                    <label for="book-title-in">Book title:</label>
+                    <div class="align-right"><input type="text" name="book-title-in" id="book-title-in"></div>
+                </li>
+                <li>
+                    <label for="book-author-in">Book Author:</label>
+                    <div class="align-right"><input type="text" name="book-author-in" id="book-author-in"></div>
+                </li>
+                <li>
+                    <label for="book-pages-in">Page Count:</label>
+                    <div class="align-right"><input type="number" name="book-pages-in" id="book-pages-in"></div>
+                </li>
+                <li>
+                    <label for="book-status-in">Have you read this book?</label>
+                    <div class="align-right align-checkbox"><input type="checkbox"></div>
+                </li>
+                <button type="button" class="add-button form-button">Add+</button>
+            </ul>
+        </form>
+    </div>
     <header id="header">
         <div id="page-title">Library</div>
     </header>
@@ -38,7 +61,7 @@
                 <div class="book-info">Read</div>
             </div>
         </div>
-        <button id="add-button">Add+</button>
+        <button  id="add-button" class="button">Add+</button>
     </div>
 </body>
 </html>
