@@ -7,6 +7,7 @@
 html, body {
     height: 100%;
     font-family:Roboto, sans-serif;
+    
 }
 #header {
     background-color: #ffe0b2;
@@ -27,6 +28,9 @@ html, body {
     height:calc(100% - 90px);
     font-size: 1.5rem;
 }
+/*.blur {
+    filter: blur(2px);
+}*/
 .booklist-item, 
 #sort-headers-container {
     display: grid;
@@ -77,3 +81,64 @@ html, body {
     height: 270px;
     margin: 10px 0 15px 0;
 }
+#form-pop {
+    position:fixed;
+    height:400px;
+    width: 250px;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 1;
+    border: 8px orange solid;
+    padding: 8px;
+    font-size:1.3rem ;
+}
+.form-title {
+    border-bottom: #000 2px solid;
+    width: max-content;
+}
+form {
+    height: 100%;
+    width:100%;
+}
+form ul {
+    list-style: none;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+input{
+    height: 2rem;
+    font-size: 1.1rem;
+}
+form ul li {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.align-right {
+    margin-left: auto;
+}
+.align-checkbox {
+   position: relative;
+}
+.align-checkbox input {
+    position: relative;
+    top: -35px;
+}
+.form-button {
+    margin: auto;
+}
+.button {
+    width: 75px;
+    height: 40px;
+    background-color: #906019;
+    border: black 2px solid;
+    border-radius: 7px;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
