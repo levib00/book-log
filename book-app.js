@@ -1,5 +1,3 @@
-//TODO find a way to tie library elements to DOM elements.
-
 let myLibrary = [
     book = {
         author: "Marie Lu",
@@ -22,56 +20,76 @@ function Book(title, author, pageCount, status) {
     this.status = status;
 }
 
-function addBookToLibrary() {
-    const book = new Book(`Legend${i}`, "Marie Lu", "300", "Read");
+function addBookToLibrary(title, author, pages, status) {
+    const book = new Book(title, author, pages, status);
     myLibrary.push(book);
-    createListItem()
-    console.log(myLibrary)
+    createListItem();
+    console.log(myLibrary);
     i += 1;
 }
-
-const button = document.getElementById("add-button");
-button.addEventListener("click", addBookToLibrary, false);
 
 let i = 0
 function displayList() {
     for (Object in myLibrary) {
-        createListItem()
+        createListItem();
         i += 1;
     }
 }
 
 function createListItem() {
-    
     const listContainer = document.getElementById("booklist-container");
 
-    const bookContainer = document.createElement("div");
-    bookContainer.setAttribute("class","booklist-item");
-    listContainer.append(bookContainer)
+    const listItemContainer = document.createElement("div");
+    listItemContainer.setAttribute("class","booklist-item");
+    listContainer.append(listItemContainer);
     
-    const bookTitle = document.createElement("div");
-    bookTitle.setAttribute("class","book-info");
-    bookContainer.append(bookTitle)
-    bookTitle.innerHTML = myLibrary[i].title;
+    const listItemTitle = document.createElement("div");
+    listItemTitle.setAttribute("class","book-info");
+    listItemContainer.append(listItemTitle);
+    listItemTitle.innerHTML = myLibrary[i].title;
 
-    const bookAuthor = document.createElement("div");
-    bookAuthor.innerHTML = myLibrary[i].author
-    bookAuthor.setAttribute("class","book-info");
-    bookContainer.append(bookAuthor)
+    const listItemAuthor = document.createElement("div");
+    listItemAuthor.innerHTML = myLibrary[i].author;
+    listItemAuthor.setAttribute("class","book-info");
+    listItemContainer.append(listItemAuthor);
 
-    const bookPages = document.createElement("div");
-    bookPages.innerHTML = myLibrary[i].pageCount;
-    bookPages.setAttribute("class","book-info");
-    bookContainer.append(bookPages)
+    const listItemPages = document.createElement("div");
+    listItemPages.innerHTML = myLibrary[i].pageCount;
+    listItemPages.setAttribute("class","book-info");
+    listItemContainer.append(listItemPages);
 
-    const bookStatus = document.createElement("div");
-    bookStatus.innerHTML = myLibrary[i].status;
-    bookStatus.setAttribute("class","book-info");
-    bookContainer.append(bookStatus);
+    const listItemStatus = document.createElement("div");
+    listItemStatus.innerHTML = myLibrary[i].status;
+    listItemStatus.setAttribute("class","book-info");
+    listItemContainer.append(listItemStatus);
 }
 
-function createBookForm() {
-    
+const newBookButton = document.getElementById("new-book-button");
+newBookButton.addEventListener("click", showBookForm, false);
+const popup = document.getElementById("form-pop");
+
+function showBookForm() {
+    popup.setAttribute("class","show");
+}
+
+const addButton = document.getElementById("add-button");
+addButton.addEventListener("click",addNewBook, false);
+
+function addNewBook() {
+    const title = document.getElementById("book-title-in").value;
+    const author = document.getElementById("book-author-in").value;
+    const pages = document.getElementById("book-pages-in").value;
+    const status = document.getElementById("book-status").value;
+
+    /*const title = titleIn.textContent;
+    const author = authorIn.textContent;
+    const pages = pagesIn.textContent;
+    const status = statusIn.textContent;*/
+    console.log(title, author, pages, status)
+
+    addBookToLibrary(title, author, pages, status)
+
+    popup.classList.remove("show");
 }
 
 displayList();
