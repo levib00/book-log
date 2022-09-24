@@ -26,10 +26,16 @@
                     <div class="align-right"><input type="number" name="book-pages-in" id="book-pages-in"></div>
                 </li>
                 <li>
-                    <label for="book-status-in">Have you read this book?</label>
-                    <div class="align-right align-checkbox"><input type="checkbox"></div>
+                    <label for="book-status-in">Book Status:</label>
+                    <div class="align-right align-checkbox">
+                        <select id="book-status">
+                            <option value="Read">Read</option>
+                            <option value="Unread">Unread</option>
+                            <option value="DNF">DNF</option>
+                        </select>
+                    </div>
                 </li>
-                <button type="button" class="add-button form-button">Add+</button>
+                <button type="button" id="add-button" class="button form-button">Add+</button>
             </ul>
         </form>
     </div>
@@ -47,6 +53,7 @@
                 <div class="recommendation" id="rec-end"><img src="https://images-na.ssl-images-amazon.com/images/I/81Zd2d+NMZL.jpg" alt="">A Darker Shade of Magic<br>by V.E. Schwab</div>
             </div>
         </div>
+        <div class="align-add-new"><button id="new-book-button" class="button align-right">Add+</button></div>
         <div id="sort-headers-container">
             <div class="sort-header" id="book-title" >Title </div>
             <div class="sort-header" id="author">Author</div>
@@ -61,7 +68,6 @@
                 <div class="book-info">Read</div>
             </div>
         </div>
-        <button  id="add-button" class="button">Add+</button>
     </div>
 </body>
 </html>
