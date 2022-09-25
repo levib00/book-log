@@ -33,9 +33,9 @@ html, body {
     height:calc(100% - 90px);
     font-size: 1.5rem;
 }
-/*.blur {
+.blur {
     filter: blur(2px);
-}*/
+}
 .booklist-item, 
 #sort-headers-container {
     display: grid;
@@ -68,7 +68,7 @@ html, body {
     grid-template-columns: repeat(5,1fr);
     height: 388px;
     font-size: 1.3rem;
-    background-color: #fff;
+    background-color: #ffebcd;
     margin-bottom: 10px;
 }
 #sub-content {
@@ -100,7 +100,7 @@ html, body {
     color: red;
     background-color: #fff;
     font-weight: 700;
-    border: solid;
+    border: none;
     font-size: 16px;
 }
 .align-top-line {
@@ -116,10 +116,11 @@ html, body {
     transform: translate(-50%, -50%);
     background-color: #fff;
     z-index: 1;
-    border: 8px orange solid;
+    border: 8px #906019 solid;
     padding: 8px;
     font-size:1.3rem ;
     visibility: hidden;
+    outline: #000 3px solid;
 }
 .form-title {
     border-bottom: #000 2px solid;
@@ -150,6 +151,7 @@ form ul li {
 }
 .form-button {
     margin: auto;
+    margin-top: 8px;
 }
 .button {
     width: 75px;
