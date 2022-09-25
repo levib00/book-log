@@ -10,32 +10,33 @@
 </head>
 <body id="body">
     <div id="form-pop">
-        <form action="">
-            <div class="form-title">Book Info</div>
+        <form action="" id="my-form">
+            <button type="button" class="align-close-button" id="close-form">X</button>
+            <div class="align-top-line"><div class="form-title">Book Info </div><div>*Required</div></div>
             <ul>
                 <li>
                     <label for="book-title-in">Book title:</label>
-                    <div class="align-right"><input type="text" name="book-title-in" id="book-title-in"></div>
+                    <div class="align-right"><input type="text" name="book-title-in" id="book-title-in" required> *</div>
                 </li>
                 <li>
                     <label for="book-author-in">Book Author:</label>
-                    <div class="align-right"><input type="text" name="book-author-in" id="book-author-in"></div>
+                    <div class="align-right"><input type="text" name="book-author-in" id="book-author-in" required> *</div>
                 </li>
                 <li>
                     <label for="book-pages-in">Page Count:</label>
-                    <div class="align-right"><input type="number" name="book-pages-in" id="book-pages-in"></div>
+                    <div class="align-right"><input type="number" name="book-pages-in" id="book-pages-in" required> *</div>
                 </li>
                 <li>
                     <label for="book-status-in">Book Status:</label>
                     <div class="align-right align-checkbox">
-                        <select id="book-status">
+                        <select id="book-status" required>
                             <option value="Read">Read</option>
                             <option value="Unread">Unread</option>
                             <option value="DNF">DNF</option>
-                        </select>
+                        </select> *
                     </div>
                 </li>
-                <button type="button" id="add-button" class="button form-button">Add+</button>
+                <button id="add-button" class="button form-button">Add+</button>
             </ul>
         </form>
     </div>
