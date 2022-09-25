@@ -81,15 +81,34 @@ function addNewBook() {
     const pages = document.getElementById("book-pages-in").value;
     const status = document.getElementById("book-status").value;
 
-    /*const title = titleIn.textContent;
-    const author = authorIn.textContent;
-    const pages = pagesIn.textContent;
-    const status = statusIn.textContent;*/
-    console.log(title, author, pages, status)
+    console.log(title)
+    
+    if (title === "" || author === "" || pages === "" || status === "") 
+    {
+        return
+    }
 
     addBookToLibrary(title, author, pages, status)
 
     popup.classList.remove("show");
 }
+
+const closeButton = document.getElementById("close-form")
+closeButton.addEventListener("click", closeForm, false)
+
+function closeForm() {
+    document.getElementById("book-title-in").value = "";
+    document.getElementById("book-author-in").value = "";
+    document.getElementById("book-pages-in").value = "";
+    document.getElementById("book-status").value = "";
+    
+    console.log(document.getElementById("book-title-in").value)
+
+    popup.classList.remove("show");
+}
+
+var form = document.getElementById("my-form");
+function handleForm(event) { event.preventDefault(); } 
+form.addEventListener('submit', handleForm);
 
 displayList();
