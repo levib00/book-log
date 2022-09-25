@@ -28,19 +28,35 @@ function addBookToLibrary(title, author, pages, status) {
     i += 1;
 }
 
-let i = 0
+let i = 0;
 function displayList() {
     for (Object in myLibrary) {
         createListItem();
         i += 1;
     }
 }
+//const BIC = document.getElementById(`${this.i}listItemContainer`);
+function deleteListItem() {
+    
+    BIC.remove();
+    console.log(this.i)
+    
+    for (; j < BIC.length; j++) {
+        BIC[j].addEventListener('click', deleteListItem, false);
+    }
+
+}
+
+const delButton = document.getElementsByClassName("del-button")
+
+
 
 function createListItem() {
     const listContainer = document.getElementById("booklist-container");
 
     const listItemContainer = document.createElement("div");
     listItemContainer.setAttribute("class","booklist-item");
+    listItemContainer.setAttribute("id", `${i}listItemContainer`)
     listContainer.append(listItemContainer);
     
     const listItemTitle = document.createElement("div");
@@ -62,14 +78,25 @@ function createListItem() {
     listItemStatus.innerHTML = myLibrary[i].status;
     listItemStatus.setAttribute("class","book-info");
     listItemContainer.append(listItemStatus);
+
+    const delButton = document.createElement("button");
+    delButton.setAttribute("type","button");
+    delButton.setAttribute("class","del-button");
+    delButton.innerHTML = "Del";
+    listItemStatus.append(delButton);
 }
 
 const newBookButton = document.getElementById("new-book-button");
 newBookButton.addEventListener("click", showBookForm, false);
+
 const popup = document.getElementById("form-pop");
+const header = document.getElementById("header");
+const content = document.getElementById("content-container");
 
 function showBookForm() {
     popup.setAttribute("class","show");
+    content.setAttribute("class","blur");
+    header.setAttribute("class", "blur");
 }
 
 const addButton = document.getElementById("add-button");
@@ -88,15 +115,15 @@ function addNewBook() {
         return
     }
 
-    addBookToLibrary(title, author, pages, status)
+    addBookToLibrary(title, author, pages, status);
 
-    popup.classList.remove("show");
+    closeForm();
 }
 
-const closeButton = document.getElementById("close-form")
-closeButton.addEventListener("click", closeForm, false)
+const closeButton = document.getElementById("close-form");
+closeButton.addEventListener("click", closeForm, false);
 
-function closeForm() {
+function closeFormButton() {
     document.getElementById("book-title-in").value = "";
     document.getElementById("book-author-in").value = "";
     document.getElementById("book-pages-in").value = "";
@@ -104,9 +131,14 @@ function closeForm() {
     
     console.log(document.getElementById("book-title-in").value)
 
-    popup.classList.remove("show");
+    closeForm()
 }
 
+function closeForm() {
+    popup.classList.remove("show");
+    header.classList.remove("blur");
+    content.classList.remove("blur");
+}
 var form = document.getElementById("my-form");
 function handleForm(event) { event.preventDefault(); } 
 form.addEventListener('submit', handleForm);
