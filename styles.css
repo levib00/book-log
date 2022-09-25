@@ -91,6 +91,22 @@ html, body {
     height: 260px;
     margin: 10px 0 10px 0;
 }
+.align-close-button {
+    display: flex;
+    margin-left: auto;
+    width: 20px;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    background-color: #fff;
+    font-weight: 700;
+    border: solid;
+    font-size: 16px;
+}
+.align-top-line {
+    display: flex;
+    justify-content: space-between;
+}
 #form-pop {
     position:fixed;
     height:400px;
