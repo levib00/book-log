@@ -1,3 +1,4 @@
+let i = 0;
 let myLibrary = [
     book = {
         author: "Marie Lu",
@@ -8,9 +9,10 @@ let myLibrary = [
     {
         author: "Marie Lul",
         pageCount: "3001",
-        status: "UNRead",
+        status: "Unread",
         title: "Legendary"
     }
+    
 ];
 
 function Book(title, author, pageCount, status) {
@@ -28,28 +30,16 @@ function addBookToLibrary(title, author, pages, status) {
     i += 1;
 }
 
-let i = 0;
 function displayList() {
     for (Object in myLibrary) {
         createListItem();
         i += 1;
     }
 }
-//const BIC = document.getElementById(`${this.i}listItemContainer`);
+
 function deleteListItem() {
-    
-    BIC.remove();
-    console.log(this.i)
-    
-    for (; j < BIC.length; j++) {
-        BIC[j].addEventListener('click', deleteListItem, false);
-    }
-
+    this.parentNode.parentNode.remove();
 }
-
-const delButton = document.getElementsByClassName("del-button")
-
-
 
 function createListItem() {
     const listContainer = document.getElementById("booklist-container");
@@ -84,6 +74,13 @@ function createListItem() {
     delButton.setAttribute("class","del-button");
     delButton.innerHTML = "Del";
     listItemStatus.append(delButton);
+
+    const deleteButton = document.querySelectorAll(".del-button")
+    console.log(deleteButton)
+
+    deleteButton.forEach((deleteButtons) => {
+    deleteButtons.addEventListener('click', deleteListItem);
+  });
 }
 
 const newBookButton = document.getElementById("new-book-button");
