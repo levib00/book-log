@@ -38,7 +38,7 @@ function displayList() {
 }
 
 function deleteListItem() {
-    this.parentNode.parentNode.remove();
+    this.parentNode.parentNode.remove();    
 }
 
 function createListItem() {
@@ -69,15 +69,18 @@ function createListItem() {
     listItemStatus.setAttribute("class","book-info");
     listItemContainer.append(listItemStatus);
 
+    const delButtonContainer = document.createElement("div")
+    delButtonContainer.setAttribute("id","align-delete");
+    delButtonContainer.setAttribute("class", "book-info")
+    listItemContainer.append(delButtonContainer)
+
     const delButton = document.createElement("button");
     delButton.setAttribute("type","button");
-    delButton.setAttribute("class","del-button");
+    delButton.setAttribute("class","del-button button");
     delButton.innerHTML = "Del";
-    listItemStatus.append(delButton);
+    delButtonContainer.append(delButton);
 
     const deleteButton = document.querySelectorAll(".del-button")
-    console.log(deleteButton)
-
     deleteButton.forEach((deleteButtons) => {
     deleteButtons.addEventListener('click', deleteListItem);
   });
