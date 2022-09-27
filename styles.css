@@ -29,6 +29,8 @@ html, body {
 #booklist-container {
     display: grid;
     grid-template-rows: repeat(auto-fit, 70px);
+    background-color: lightgrey;
+    padding-bottom: 10px;
     
 }
 #content-container {
@@ -48,6 +50,22 @@ html, body {
 }
 .booklist-item {
     background-color: #ffebcd;
+}
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    width: 25px;
+    margin: 0 30px;
+    align-items: center;
+}
+input[type=radio] {
+    border: 0;
+    width: 20px;
+}
+#checkbox-align{
+    justify-content: center;
+    padding-left: 0;
 }
 .book-info,
 .sort-header {
@@ -134,8 +152,10 @@ form {
     height: 100%;
     width:100%;
 }
-form ul {
+li {
     list-style: none;
+}
+form ul {
     margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
