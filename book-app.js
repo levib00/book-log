@@ -1,19 +1,5 @@
 let i = 0;
-let myLibrary = [
-    book = {
-        author: "Marie Lu",
-        pageCount: "300",
-        status: "Read",
-        title: "Legend"
-    },
-    {
-        author: "Marie Lul",
-        pageCount: "3001",
-        status: "Unread",
-        title: "Legendary"
-    }
-    
-];
+let myLibrary = [];
 
 function Book(title, author, pageCount, status) {
     this.title = title;
