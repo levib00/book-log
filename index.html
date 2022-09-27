@@ -11,22 +11,22 @@
 <body id="body">
     <div id="form-pop">
         <form action="" id="my-form">
-            <button type="button" class="align-close-button" id="close-form">X</button>
-            <div class="align-top-line"><div class="form-title">Book Info </div><div>*Required</div></div>
-            <ul>
-                <li>
+            <button type="button" class="align-close-button flex-container" id="close-form">X</button>
+            <div class="align-top-line flex-container"><div class="form-title">Book Info </div><div>*Required</div></div>
+            <ul class="flex-container">
+                <li class="flex-container">
                     <label for="book-title-in">Book title:</label>
                     <div class="align-right"><input type="text" name="book-title-in" id="book-title-in" required> *</div>
                 </li>
-                <li>
+                <li class="flex-container">
                     <label for="book-author-in">Book Author:</label>
                     <div class="align-right"><input type="text" name="book-author-in" id="book-author-in" required> *</div>
                 </li>
-                <li>
+                <li class="flex-container">
                     <label for="book-pages-in">Page Count:</label>
                     <div class="align-right"><input type="number" name="book-pages-in" id="book-pages-in" required> *</div>
                 </li>
-                <li>
+                <li class="flex-container">
                     <label for="book-status-in">Book Status:</label>
                     <div class="align-right align-checkbox">
                         <select id="book-status" required>
@@ -41,28 +41,28 @@
             </ul>
         </form>
     </div>
-    <header id="header">
+    <header id="header" class="flex-container">
         <div id="page-title">Library</div>
     </header>
     <div id="content-container">
         <div id="sub-content">
             Creators Top 5
-            <div class="recommendations-container">
-                <div class="recommendation" id="rec-end"><img src="https://images-na.ssl-images-amazon.com/images/I/81tBoQP5V+L.jpg" alt="">The Eye of The World<br>by Robert Jordan</div>
-                <div class="recommendation" id="rec-even"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1617768316i/68428.jpg" alt="">Mistborn: The Final Empire<br>by Brandon Sanderson</div>
-                <div class="recommendation" id="rec-mid"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1398083044l/21956219.jpg" alt="">Assassins Apprentice<br>by Robin Hobb</div>
-                <div class="recommendation" id="rec-even"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1501368160l/9275658.jpg" alt="">Legend<br>by Marie Lu</div>
-                <div class="recommendation" id="rec-end"><img src="https://images-na.ssl-images-amazon.com/images/I/81Zd2d+NMZL.jpg" alt="">A Darker Shade of Magic<br>by V.E. Schwab</div>
+            <div class="recommendations-container grid-container">
+                <div class="recommendation flex-container" id="rec-end"><img src="https://images-na.ssl-images-amazon.com/images/I/81tBoQP5V+L.jpg" alt="">The Eye of The World<br>by Robert Jordan</div>
+                <div class="recommendation flex-container" id="rec-even"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1617768316i/68428.jpg" alt="">Mistborn: The Final Empire<br>by Brandon Sanderson</div>
+                <div class="recommendation flex-container" id="rec-mid"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1398083044l/21956219.jpg" alt="">Assassins Apprentice<br>by Robin Hobb</div>
+                <div class="recommendation flex-container" id="rec-even"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1501368160l/9275658.jpg" alt="">Legend<br>by Marie Lu</div>
+                <div class="recommendation flex-container" id="rec-end"><img src="https://images-na.ssl-images-amazon.com/images/I/81Zd2d+NMZL.jpg" alt="">A Darker Shade of Magic<br>by V.E. Schwab</div>
             </div>
         </div>
-        <div id="sort-headers-container">
-            <div class="sort-header" id="book-title" >Title </div>
-            <div class="sort-header" id="author">Author</div>
-            <div class="sort-header" id="page-count">Page Count</div>
-            <div class="sort-header" id="status">Status</div>
-            <div class="sort-header" id="align-add-new"><button id="new-book-button" class="button">Add+</button></div>
+        <div id="sort-headers-container" class="grid-container">
+            <div class="sort-header flex-container" id="book-title" >Title </div>
+            <div class="sort-header flex-container" id="author">Author</div>
+            <div class="sort-header flex-container" id="page-count">Page Count</div>
+            <div class="sort-header flex-container" id="status">Status</div>
+            <div class="sort-header flex-container flex-container" id="align-add-new"><button id="new-book-button" class="button">Add+</button></div>
         </div>
-        <div id="booklist-container">
+        <div id="booklist-container" class="grid-container">
         </div>
     </div>
 </body>
