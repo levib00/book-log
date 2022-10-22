@@ -1,13 +1,6 @@
 let i = 0;
 let myLibrary = [];
 
-/*function Book(title, author, pageCount, status) {
-    this.title = title;
-    this.author = author;
-    this.pageCount = pageCount;
-    this.status = status;
-}*/
-
 class Book {
     constructor(title, author, pageCount, status) {
         this.title = title;
