@@ -158,15 +158,16 @@ const addButton = document.getElementById("add-button");
 addButton.addEventListener("click",addNewBook, false);
 
 function addNewBook() {
-    const title = document.getElementById("book-title-in").value;
-    const author = document.getElementById("book-author-in").value;
-    const pages = document.getElementById("book-pages-in").value;
-    const status = document.getElementById("book-status").value;
+    const title = document.getElementById("book-title-in");
+    const author = document.getElementById("book-author-in");
+    const pages = document.getElementById("book-pages-in");
+    const status = document.getElementById("book-status");
 
     console.log(status)
     
-    if (title === "" || author === "" || pages === "" || status === "") 
+    if (title.validity.valueMissing || author.validity.valueMissing || pages.validity.valueMissing || status.validity.valueMissing) 
     {
+        
         return
     }
 
@@ -182,7 +183,7 @@ function addNewBook() {
         }
     }
 
-    addBookToLibrary(title, author, pages, status);
+    addBookToLibrary(title.value, author.value, pages.value, status.value);
     selectRadioButton();
     closeForm();
 }
